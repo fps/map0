@@ -1,8 +1,6 @@
 from PIL import Image
 import sys
 
-i = Image.open(sys.argv[1])
-
 def preamble():
 	print("")
 	print("// entity 0")
@@ -27,5 +25,13 @@ def finish():
     print("}")
 
 preamble()
-cube([1, 1, 1], [2, 2, 2])
+
+i = Image.open(sys.argv[1])
+
+size = i.size
+for x in range(0, size[0]):
+    for y in range(0, size[1]):
+        pixel = i.getpixel((x,y))
+        if pixel[0] < 128:
+            cube([x,y,0], [x+1, y+1, 1])
 finish()
