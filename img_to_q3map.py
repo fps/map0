@@ -24,14 +24,15 @@ def cube(p1, p2):
 def finish():
     print("}")
 
-preamble()
-
-i = Image.open(sys.argv[1])
-
-size = i.size
-for x in range(0, size[0]):
-    for y in range(0, size[1]):
-        pixel = i.getpixel((x,y))
-        if pixel[0] < 128:
-            cube([x,y,0], [x+1, y+1, 1])
-finish()
+if __name__ == "__main__":
+	preamble()
+	
+	i = Image.open(sys.argv[1])
+	
+	size = i.size
+	for x in range(0, size[0]):
+	    for y in range(0, size[1]):
+	        pixel = i.getpixel((x,y))
+	        if pixel[0] < 128:
+	            cube([x,y,0], [x+1, y+1, 1])
+	finish()
