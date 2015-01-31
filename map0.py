@@ -3,7 +3,8 @@ def preamble():
 	print("// entity 0")
 	print("{")
 	print('"classname" "worldspawn"')
-	
+
+# all coordinates of p1 must be smaller than those of p2	
 def cube(p1, p2):
 	print("// brush 0")
 	print("{")
